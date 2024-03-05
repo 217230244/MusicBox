@@ -1,25 +1,46 @@
-public class Main{
-    public static void main(String[] args) {
-        
-        MusicBox mbox = new MusicBox("S34TG65", 'Y', "Raindrops", "Misty", 
-        "The path less traveled", "Country", "BZEE Music", "Rhythm Divine");
+public class Student {
+    private String studentID;
+    private String studentName;
+    private String[] extraActivities;
 
-        System.out.println("Now playing the song");
-        mbox.playSong(mbox.getSongID(), mbox.getPremiumSong(), 2);
-        
-        // --- TODO
+    public Student(String studentID, String studentName, int numExtraActivities)
+        this.studentID = studentID;
+        this.studentName = studentName;
+        this.extraActivities = new String[numExtraActivities];
+}
 
-        /* Repeat the above code to create another object  
-         * Pass different parameters to the MusicBox constructor, but initialise premiumSong to N and when calling the
-         * playSong method, pass ads parameter as just 1
-         * 
-         * 
-        */
-        
+public String getStudentID() {
+    return studentID;
+}
 
+public void setStudentID(String studentID) {
+    this.studentID = studentID;
+}
+
+public String getStudentName() {
+    return studentName;
+}
+
+public void setStudentName(String studentName) {
+    this.studentName = studentName;
+}
+
+public String[] getExtraActivities() {
+    return extraActivities;
+}
+
+public void setExtraActivities(String[] extraActivities) {
+    this.extraActivities = extraActivities;
+}
+
+public void addExtraActivity(Strng activity, int index) {
+    if (index >= 0 && index < extraActivities.length) {
+        extraActivities[index] = activity;
+    } else {
+        System.out.println(x:"Invalid index");
     }
 }
 
-
-
-
+public String toString() {
+    return "Student ID: " + studentID + "\nStudent Name: " + studentName + "\nExtra Activities: " + Arrays.toString(extraActivities);
+}
